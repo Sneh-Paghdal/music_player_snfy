@@ -1,4 +1,8 @@
+import 'package:asanfy/widgets/section_header.dart';
+import 'package:asanfy/widgets/song_card.dart';
 import 'package:flutter/material.dart';
+
+import '../models/song_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Song> songs = Song.songs;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +34,27 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 _DiscoverMusic(),
-
+                Padding(
+                  padding: const EdgeInsets.only(left: 20,top: 20,bottom: 20),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 20),
+                        child: SectionHeader(title: 'Trending Music'),
+                      ),
+                      const SizedBox(height: 20,),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.27,
+                        child: ListView.builder(
+                          itemCount: songs.length,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context,index){
+                            return SongCard(songs: songs[index]);
+                        }),
+                      )
+                    ],
+                  ),
+                ),
               ],
             )
         ),
@@ -125,4 +150,8 @@ class _CustomAppBar extends StatelessWidget with PreferredSizeWidget{
   Size get preferredSize => const Size.fromHeight(58.0);
   
 }
+
+
+
+
 
