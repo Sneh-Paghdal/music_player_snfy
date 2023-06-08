@@ -1,4 +1,4 @@
-class Song{
+class Song {
   final String title;
   final String description;
   final String url;
@@ -15,23 +15,20 @@ class Song{
     Song(
       title: 'Glass',
       description: 'Glass',
-      url: "assets/music/glass.mp3",
-      coverUrl: "assets/images/glass_cover.jpg",
-    ),Song(
-      title: 'Banado',
-      description: 'Bhanado',
-      url: "assets/music/bannado.mp3",
-      coverUrl: "assets/images/glass_cover.jpg",
-    ),Song(
-      title: 'Afree',
-      description: 'Afree',
-      url: "assets/music/afree.mp3",
-      coverUrl: "assets/images/glass_cover.jpg",
-    ),Song(
-      title: 'Mokingbird',
-      description: 'Mokingbird',
-      url: "assets/music/mockingbird.mp3",
-      coverUrl: "assets/images/glass_cover.jpg",
+      url: 'assets/music/glass.mp3',
+      coverUrl: 'assets/images/glass.jpg',
     ),
+    Song(
+      title: 'Illusions',
+      description: 'Illusions',
+      url: 'assets/music/illusions.mp3',
+      coverUrl: 'assets/images/illusions.jpg',
+    ),
+    Song(
+      title: 'Pray',
+      description: 'Pray',
+      url: 'assets/music/pray.mp3',
+      coverUrl: 'assets/images/pray.jpg',
+    )
   ];
 }
